@@ -12,7 +12,15 @@ def insertion_sort(arr: list[int]) -> list[int]:
     Returns:
         Lista ordenada (modifica in-place y retorna la misma lista)
     """
-    # TODO: Implementar
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+        # Mover elementos mayores que key una posición adelante
+        while j >= 0 and arr[j] > key:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+    return arr
     pass
 
 
